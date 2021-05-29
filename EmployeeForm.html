@@ -68,14 +68,21 @@
             });
             const email = document.querySelector('#email');
             const emailError = document.querySelector('.email-error');
-            text.addEventListener('input', function(){
+            email.addEventListener('input', function(){
                 let emailRegex = RegExp('^[A-Za-z0-9+_-]+([a-zA-Z0-9]+)*+@([a-zA-Z0-9]+)[.][a-z]{2,}$');
                 if(emailRegex.test(email.value))
                 emailError.textContent ="";
                 else emailError.textContent = "Email is INcorrect";
             });
+            const number = document.querySelector('#number');
+            const numberError = document.querySelector('.number-error');
+            number.addEventListener('input', function(){
+                let numberRegex = RegExp('^[91]{2}+[ ]+[0-9]{10}$');
+                if(numberRegex.test(number.value))
+                numberError.textContent ="";
+                else numberError.textContent = "Number is INcorrect";
+            });
            
-            
             const salary = document.querySelector('#salary');
             const output = document.querySelector('.salary-output');
             output.textContent = salary.value;
